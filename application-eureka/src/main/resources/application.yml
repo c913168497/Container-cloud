@@ -1,0 +1,21 @@
+server:
+  port: 10000
+spring: ## 添加密码
+  security:
+    user:
+      name: cnc
+      password: 123456
+eureka:
+  client:
+    register-with-eureka: false # 不将自己注册到服务端
+    fetch-registry: false #表示是否从Eureka Server获取注册信息
+    service-url:
+      defaultZone: http://localhost:10000/eureka/
+  server:
+    enable-self-preservation: false # 关闭自我保护
+    eviction-interval-timer-in-ms: 5000 # 扫描失效服务的间隔时间（单位毫秒，默认是60*1000）即60秒
+    wait-time-in-ms-when-sync-empty: 5 #设置 eureka server同步失败的等待时间 默认 5分 , 在这期间，它不向客户端提供服务注册信息
+    number-of-replication-retries: 5 # 设置 eureka server同步失败的重试次数 默认为 5 次
+    renewal-percent-threshold: 0.49 #自我保护系数（默认0.85）
+  instance:
+    prefer-ip-address: true # 将IP注册到Eureka Server上，如果不配置就是机器的主机名

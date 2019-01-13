@@ -1,0 +1,20 @@
+logging:
+  file: ${spring.application.name}
+  path: /opt/logs/${spring.application.name}
+  level:
+    org:
+      application:
+        docker: info
+security:
+    name: cnc
+    password: 123456
+#eureka配置
+eureka:
+ client:
+  registry-fetch-interval-seconds: 20
+  serviceUrl:
+    defaultZone: http://${security.name}:${security.password}@172.20.3.20:10000/eureka/
+ instance:
+  prefer-ip-address: true
+  lease-expiration-duration-in-seconds: 30
+  lease-renewal-interval-in-seconds: 10

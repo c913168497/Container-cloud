@@ -1,0 +1,27 @@
+server:
+  port: 10001
+#spring配置
+spring:
+  profiles:
+    active: local
+  application:
+    name: application-api-gateway
+  cloud:
+      gateway:
+        routes:
+        - id:  apiuser
+          uri: lb://APPLICATION-DOCKER
+          predicates:
+          - Path=/application-docker/**
+          filters:
+          - StripPrefix=1
+        - id:  apiuser
+          uri: lb:ws://APPLICATION-DOCKER
+          predicates:
+          - Path=/application-docker/**
+          filters:
+          - StripPrefix=1
+feign:
+  hystrix:
+    enabled: true
+
