@@ -11,6 +11,11 @@ public class UserService {
         String url = "/test/getUserInfo";
         String url1 = "test/getManagerInfo";
         String url2 = "test/getAdminInfo";
+        List<String> strings = new ArrayList<>();
+        strings.add(url);
+        strings.add(url1);
+        strings.add(url2);
+        return strings;
     }
 
     public User getUserInfoByUserName(){

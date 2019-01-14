@@ -13,10 +13,7 @@
         <version>1.0</version>
     </parent>
 
-
     <name>application-feign</name>
-    <description>for download</description>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <option name="USE_RELEASE_OPTION" value="false" />
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="application-api-gateway" />
-        <module name="application-docker" />
+        <module name="application-common" />
+        <module name="application-deploy" />
+        <module name="application-deploy-components-kubernetes" />
         <module name="application-eureka" />
         <module name="application-feign" />
+        <module name="application-file" />
         <module name="application-jwt" />
         <module name="application-plugin" />
         <module name="application-resource" />
-        <module name="common" />
-        <module name="file" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="application-api-gateway" target="1.8" />
-      <module name="application-docker" target="1.8" />
+      <module name="application-common" target="1.8" />
+      <module name="application-components" target="1.8" />
+      <module name="application-deploy" target="1.8" />
+      <module name="application-deploy-components-kubernetes" target="1.8" />
       <module name="application-eureka" target="1.8" />
       <module name="application-feign" target="1.8" />
+      <module name="application-file" target="1.8" />
       <module name="application-jwt" target="1.8" />
-      <module name="application-plugin" target="1.7" />
+      <module name="application-plugin" target="1.8" />
       <module name="application-resource" target="1.8" />
-      <module name="common" target="1.5" />
       <module name="Container-cloud" target="1.8" />
-      <module name="file" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

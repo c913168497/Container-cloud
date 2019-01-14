@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>application</artifactId>
+        <groupId>org.cloud</groupId>
+        <version>1.0</version>
+    </parent>
+
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.cloud</groupId>
+    <groupId>org.cloud</groupId>
     <artifactId>application-common</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
-    <name>common</name>
+    <version>1.0</version>
     <description>for container</description>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.ethz.ganymed</groupId>
+            <artifactId>ganymed-ssh2</artifactId>
+            <version>build210</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+    </dependencies>
 
 </project>

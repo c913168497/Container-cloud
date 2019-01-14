@@ -20,21 +20,24 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+    <spring-boot.version>2.0.1.RELEASE</spring-boot.version>
     <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
   </properties>
 
   <name>application</name>
+  <!-- 博客地址 -->
   <url>140.143.99.177</url>
   <modules>
     <module>application-eureka</module>
     <module>application-feign</module>
     <module>application-jwt</module>
     <module>application-common</module>
-    <module>application-api-getway</module>
+    <module>application-api-gateway</module>
     <module>application-file</module>
-    <module>application-docker</module>
+    <module>application-deploy</module>
     <module>application-plugin</module>
     <module>application-resource</module>
+    <module>application-components</module>
   </modules>
 
   <dependencies>
@@ -46,6 +49,15 @@
       <optional>true</optional>
     </dependency>
 
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.39</version>
+    </dependency>
   </dependencies>
   <dependencyManagement>
     <dependencies>
@@ -58,12 +70,60 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
   <build>
+    <finalName>${artifactId}</finalName>
     <plugins>
       <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <compilerVersion>${java.version}</compilerVersion>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
       </plugin>
     </plugins>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring-boot.version}</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>repackage</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <skipTests>true</skipTests>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
   </build>
+
+  <profiles>
+    <profile>
+      <id>jdk18</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <jdk>1.8</jdk>
+      </activation>
+      <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+      </properties>
+    </profile>
+  </profiles>
 </project>

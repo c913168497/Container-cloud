@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/application-api-getway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/application-api-gateway" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application-common" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/application-docker" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/application-components" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/application-components/application-deploy-components-kubernetes" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/application-deploy" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application-feign" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application-file" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application-jwt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application-plugin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application-resource" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

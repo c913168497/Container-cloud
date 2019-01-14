@@ -1,8 +1,0 @@
-server:
-  port: 10002
-#spring配置
-spring:
-  profiles:
-    active: local
-  application:
-    name: application-docker

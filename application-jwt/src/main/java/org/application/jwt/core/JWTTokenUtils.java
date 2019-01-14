@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.security.SignatureException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
