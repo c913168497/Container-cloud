@@ -1,0 +1,11 @@
+该项目 BS 结构，
+正处于项目架构整合阶段，
+基于spring cloud  Finchley.RELEASE 版本开发，
+开发目的，提升微服务从开发到生产的发布效率，和简化发布流程，
+该项目设计思路，各个功能组件化，随意组合流程，即可实现不同发布流程
+主流程上分为： 初始化机器集群，构建，发布 、日志收集
+初始化机器集群流程分为： 打通集群 SSH ，安装jdk、k8s、docker、filebeat、kafka、zookeeper、rediselasticsearch、maven、gradle、git、nfs、vnc 等
+构建流程分为：下载代码 git-clone/upload-code-file 、编译代码 maven/gradle 、 docker 镜像构建 docker -> harbor
+发布流程分为：下载镜像: imageUrl 、 发布镜像，并管理发布实例 k8s+docker
+日志收集分为：filebeat 脚本收集文件 通过 kafka 发送，至 收集日志服务进行日志管理
+特殊功能：web端进入docker 容器，进行操作，web端通过vnc 操作指定云主机
