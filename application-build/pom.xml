@@ -8,16 +8,11 @@
         <version>1.0</version>
     </parent>
     <groupId>org.application</groupId>
-    <artifactId>application-deploy</artifactId>
+    <artifactId>application-build</artifactId>
     <version>1.0</version>
-    <name>application-deploy</name>
+    <name>application-build</name>
 
     <dependencies>
-        <dependency>
-            <groupId>org.cloud</groupId>
-            <artifactId>application-deploy-components-kubernetes</artifactId>
-            <version>1.0</version>
-        </dependency>
     <!-- websocket  -->
     <dependency>
         <groupId>org.springframework.boot</groupId>

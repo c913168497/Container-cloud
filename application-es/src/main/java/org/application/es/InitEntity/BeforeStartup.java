@@ -33,11 +33,6 @@ public class BeforeStartup implements CommandLineRunner {
             ElasticsearchUtil.putMapping(INDEX_DEPLOY, TYPE_DEPLOY);
             log.info("--------Create " + INDEX_DEPLOY + " Index----------");
         }
-        if (!ElasticsearchUtil.isIndexExist(INDEX_OPERATION)){
-            ElasticsearchUtil.createIndex(INDEX_OPERATION);
-            ElasticsearchUtil.putMapping(INDEX_OPERATION, TYPE_OPERATION);
-            log.info("--------Create " + INDEX_OPERATION + " Index----------");
-        }
         if (!ElasticsearchUtil.isIndexExist(INDEX_BUSSINESS_APP)){
             ElasticsearchUtil.createIndex(INDEX_BUSSINESS_APP);
             ElasticsearchUtil.putMapping(INDEX_BUSSINESS_APP, TYPE_BUSSINESS_APP);
