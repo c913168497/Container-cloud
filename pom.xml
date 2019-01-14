@@ -20,6 +20,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+    <source.encoding>UTF-8</source.encoding>
+    <swagger.version>2.7.0</swagger.version>
     <spring-boot.version>2.0.1.RELEASE</spring-boot.version>
     <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
   </properties>
@@ -35,7 +37,7 @@
     <module>application-api-gateway</module>
     <module>application-file</module>
     <module>application-deploy</module>
-    <module>application-plugin</module>
+    <module>application-es</module>
     <module>application-resource</module>
     <module>application-components</module>
   </modules>
@@ -58,6 +60,24 @@
       <artifactId>fastjson</artifactId>
       <version>1.2.39</version>
     </dependency>
+
+    <!-- swagger -->
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger-ui</artifactId>
+      <version>${swagger.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger2</artifactId>
+      <version>${swagger.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-bean-validators</artifactId>
+      <version>${swagger.version}</version>
+    </dependency>
+
   </dependencies>
   <dependencyManagement>
     <dependencies>

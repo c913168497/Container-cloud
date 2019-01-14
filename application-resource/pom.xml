@@ -11,7 +11,7 @@
     <artifactId>application-resource</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>application-resource</name>
-    <description>forcontainer</description>
+    <description>resource init</description>
 
     <properties>
         <java.version>1.8</java.version>

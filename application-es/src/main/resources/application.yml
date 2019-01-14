@@ -1,0 +1,20 @@
+server:
+   port: 9017
+
+spring:
+  application:
+    name: appcloud-log-es
+  profiles:
+    active: local
+
+
+
+#日志配置
+logging:
+  file: ${spring.application.name}
+  path: /opt/logs/${spring.application.name}
+  level:
+     com:
+       szzt:
+        smart:
+          framework: debug
